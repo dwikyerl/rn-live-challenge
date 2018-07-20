@@ -5,3 +5,11 @@ export const startGame = () => {
     type: actionTypes.START_GAME
   }
 }
+
+export const selectItem = (index, value) => {
+  return {
+    type: actionTypes.SELECT_ITEM,
+    index,
+    value
+  }
+}

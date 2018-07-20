@@ -8,7 +8,14 @@ class Board extends Component {
   render() {
     const boardItems = this.props.board.map((line, lineIndex) => (
       <View key={lineIndex} style={styles.line}>
-        { line.map((item, itemIndex) => <BoardItem text={item} key={itemIndex}/> )}
+        { line.map((item, itemIndex) => (
+          <BoardItem
+            text={item}
+            key={itemIndex}
+            onPressed={() => this.props.onItemPressed({ x: lineIndex, y: itemIndex })}
+          /> 
+          )
+        )}
       </View>
       )
     );

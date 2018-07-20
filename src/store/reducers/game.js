@@ -10,8 +10,15 @@ const initalState = {
 
 const reducer = (state = initalState, action) => {
   switch(action.type) {
-    case actionTypes.START_GAME:
-      return state;
+    case actionTypes.SELECT_ITEM:
+      const updatedBoard = [...state.board];
+      if (updatedBoard[action.index.x][action.index.y] === '') {
+        updatedBoard[action.index.x][action.index.y] = action.value;
+      }
+      return {
+        ...state,
+        board: updatedBoard
+      };
     default:
       return state;
   }

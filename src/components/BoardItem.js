@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
-import { Text, View, StyleSheet, TouchableHighlight } from 'react-native'
+import { Text, View, StyleSheet, TouchableOpacity } from 'react-native'
 
 export default class BoardItem extends Component {
   render() {
     return (
-      <TouchableHighlight>
+      <TouchableOpacity onPress={this.props.onPressed}>
         <View style={styles.boardItem}>
           <Text style={styles.itemText}>{this.props.text}</Text>
         </View>
-      </TouchableHighlight>
+      </TouchableOpacity>
     )
   }
 }

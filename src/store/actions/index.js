@@ -1,3 +1,4 @@
 export {
-  startGame
+  startGame,
+  selectItem
 } from './game';
